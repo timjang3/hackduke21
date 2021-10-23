@@ -13,13 +13,24 @@ def signup():
         password = request.form.get('password')
         accounttype = request.form.get('accounttype')
 
-    new_user = User(name=name, password=generate_password_hash(password, method='sha256'), accounttype=accounttype)
-    db.session.add(new_user)
-    db.session.commit
+    if accounttype == 'lender' or accounttype == 'borrower':
+        new_user = User(name=name, password=generate_password_hash(password, method='sha256'), accounttype=accounttype)
+        db.session.add(new_user)
+        db.session.commit
 
 @auth.route('/login', methods=['GET', 'POST'])
 def login():
-    if request.method == 'POST'
+    if request.method == 'POST':
+        name = request.form.get('name')
+        password = request.form.get('password') 
+
+    user = User.query.filter_by(name=name).first()
+    if name:
+         if check_password_hash(user.password, password): #checks user.password and password to see if they are the same
+                login_user(user, remember=True)
+                flash('Logged in successfully!', category='success')
+                return redirect(url_for('views.home'))
+
 
 @auth.route('/logout', methods=['GET','POST'])
 @login_required
