@@ -31,7 +31,7 @@ export function Mission() {
     </Styled.Flex>
     <Styled.Flex>
       <Styled.Background>
-            <Styled.SubDescription>No longer will guitars and keyboards collect dust in the corner of your garage. Lend your instruments today and follow the progress of a new musician!</Styled.SubDescription>
+            <Styled.SubDescription>No longer will guitars and keyboards collect dust in the corner of your garage. Lend your instruments today and follow the progress of an aspiring musician!</Styled.SubDescription>
       </Styled.Background>
       <Styled.Image><img src="https://i.ibb.co/1Kh5S7M/families-banner35.jpg" alt="Children playing instruments"/></Styled.Image>
     </Styled.Flex>
