@@ -42,7 +42,6 @@ def connect(app):
     port = '26257'
     db_name = 'hack-duke-4316.main'
     conn_string = f'{db_type}://{username}:{password}@{host}:{port}/{db_name}'
-    # [DB_TYPE]+[DB_CONNECTOR]://[USERNAME]:[PASSWORD]@[HOST]:[PORT]/[DB_NAME]
     app.config['SQLALCHEMY_DATABASE_URI'] = conn_string
     db.init_app(app)
 
