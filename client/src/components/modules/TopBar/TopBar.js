@@ -8,9 +8,8 @@ export function TopBar() {
   const router = useRouter();
 
   return (
-      <Styled.Background>
-          <Styled.Title>HackDuke 21</Styled.Title>
-          <Styled.Title>Click here if you want to lend your instrument</Styled.Title>
-      </Styled.Background>
+    <Styled.Background>
+      <Styled.Title>HackDuke</Styled.Title>
+    </Styled.Background>
   );
 }
