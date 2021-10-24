@@ -1,4 +1,4 @@
-from flask import Blueprint, render_template, request, flash, redirect, url_for
+from flask import Blueprint, render_template, request
 from .models import Account
 from werkzeug.security import generate_password_hash, check_password_hash
 from website import db
@@ -11,13 +11,15 @@ def signup():
     if request.method == 'POST':
         name = request.form.get('name')
         password = request.form.get('password')
-        account_type = request.form.get('accounttype')
-        if account_type == 'lender' or account_type == 'borrower' :
-            new_user = Account(name=name, password=generate_password_hash(password, method='sha256'), account_type=account_type)
+        accounttype = request.form.get('accountType')
+        print(accounttype)
+        if accounttype == 'lender' or accounttype == 'borrower' :
+            new_user = Account(name=name, password=generate_password_hash(password, method='sha256'), accounttype=accounttype)
             db.session.add(new_user)
             db.session.commit()
             return "200"
-        return "500"
+        else:
+            return "500"
 
 
 
@@ -30,7 +32,6 @@ def login():
         if name:
             if check_password_hash(user.password, password): #checks user.password and password to see if they are the same
                     login_user(user, remember=True)
-                    flash('Logged in successfully!', category='success')
         return "500"
 
 

@@ -2,7 +2,6 @@ from flask import Flask
 from flask_sqlalchemy import SQLAlchemy
 from os import path
 from flask_login import LoginManager
-import urllib
 import os
 
 db = SQLAlchemy()
@@ -26,7 +25,7 @@ def create_app():
     login_manager.login_view='auth.login'
     login_manager.init_app(app)
 
-    from .models import Account
+    from .models import Account, Instrument
 
     @login_manager.user_loader
     def load_user(id):

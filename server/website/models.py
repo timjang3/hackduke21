@@ -7,14 +7,16 @@ class Account(db.Model, UserMixin):
     id = db.Column(db.Integer, primary_key=True)
     name = db.Column(db.String(150))
     password = db.Column(db.String(150))
-    account_type = db.Column(db.String(150))
+    accounttype = db.Column(db.String(150))
 
-    # instrumentslend = db.relationship('Instrument', backref="user")
-    # instrumentsborrowed = db.relationship('Instrument', backref="user")
+    #instrumentslent = db.relationship('Instrument', backref="user")
+    #instrumentsborrowed = db.relationship('Instrument', backref="user")
 
 class Instrument(db.Model):
     id = db.Column(db.Integer, primary_key=True)
+    name = db.Column(db.String(150))
+    type = db.Column(db.String(150))
+    picture = db.Column(db.String(500))
+
     lender_id = db.Column(db.Integer, ForeignKey('user.id'))
     borrowed_id = db.Column(db.Integer, ForeignKey('user.id'))
-    instrument_type = db.Column(db.String(150))
-    picture = db.Column(db.String(500))
