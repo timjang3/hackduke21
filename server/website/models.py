@@ -10,7 +10,7 @@ class User(db.Model, UserMixin):
     accounttype = db.Column(db.String(150))
     
     instrumentslend = db.relationship('Instrument', backref="user")
-    instrumentsborrowed = db.Relationship
+    instrumentsborrowed = db.relationship('Instrument', backref="user")
 
 class Instrument(db.Model):
     id = db.Column(db.Integer, primary_key=True)
