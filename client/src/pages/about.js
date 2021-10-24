@@ -11,6 +11,7 @@ export default function About() {
     <div>
       <TopBar />
       <div>This is our about page</div>
+      <Mission />
     </div>
   );
 }

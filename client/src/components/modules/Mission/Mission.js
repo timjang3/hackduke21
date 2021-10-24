@@ -2,9 +2,9 @@ import React, { useState } from "react";
 import Link from "next/link";
 import { NavBar, Region, RegionSelect } from "../../elements/index";
 import { useRouter } from "next/router";
-import * as Styled from "./Landing.styled";
+import * as Styled from "./Mission.styled";
 
-export function Landing() {
+export function Mission() {
   const router = useRouter();
 
   return (

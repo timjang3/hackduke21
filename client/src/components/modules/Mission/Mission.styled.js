@@ -7,50 +7,22 @@ import { CgSearch } from "react-icons/cg"
 export const Background = styled.div`
   position: relative;
   height: 300px;
-  border-radius:12px;
-  width: 370px;
-  background-color:#DDDDDD;
-  overflow:hidden;
-  box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.4);
-  text-align: center;
-  margin-bottom:40px;
-  transition: 500ms ease;
+  width: 650px;
+`
 
-  &:hover {
-    box-shadow: 0px 0px 20px 0px rgba(0,0,0,0.8);
-  }
-`
-export const ImageContainer = styled.div`
-  width:100%;
-  height:300px;
-  overflow:hidden;
-  margin:auto;
-  border-radius:7px;
-  position:relative;
-  top:0;
-  position:absolute;
-  z-index:0;
-`
-export const Image = styled.img`
-  width:100%;
-  margin-top:-30px;
-`
 export const Title = styled.div`
   font-size: 55px;
   font-weight:600;
   color:#383838;
   line-height: 1.14;
 `
+
 export const Description = styled.div`
   padding-top:10px;
-  font-size: 40px;
-  font-weight:700;
+  font-size: 25px;
   line-height: 1.5;
   font-weight:500;
-  color: white;
-  position:relative;
-  z-index:1;
-  text-shadow: 2px 2px 30px #282828;
+  color:#383838;
 `
 
 export const Flex = styled.div`
@@ -66,6 +38,10 @@ export const Flex = styled.div`
 export const Button = styled.div`
   padding:15px;
   font-size:20px;
+`
+export const Image = styled.div`
+  padding-left: 100px;
+  overflow:hidden;
 `
 export const Link = styled.a`
   padding-top:10px;
