@@ -1,7 +1,7 @@
 
 import { keyframes } from "styled-components";
 import { useRouter } from "next/router";
-import {TopBar, Landing, Instruments} from "../components/modules/index"
+import {TopBar, Landing, Instruments, InstrumentCard} from "../components/modules/index"
 import { useMediaQuery } from "../hooks/useMediaQuery";
 import styled from "styled-components"
 
@@ -24,11 +24,11 @@ let instrumentsArray = [
   },
   {
     name: "Saxophone",
-    image: "https://i.ibb.co/HB2WwTB/Yanagisawa-T880-sax-in-Menton-France.jpg"
+    image: "https://i.ibb.co/8KWn1Qy/88269917-2494183857501366-2940449703080230912-n.jpg"
   },
   {
     name: "Flute",
-    image: "https://i.ibb.co/VDdtp6B/31-P2-Tje-REk-L-AC.jpg"
+    image: "https://i.ibb.co/wrb1TTw/1262653.jpg"
   },
 ]
 

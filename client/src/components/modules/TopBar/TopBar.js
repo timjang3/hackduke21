@@ -9,7 +9,7 @@ export function TopBar() {
   return (
       <Styled.Background>
           <Styled.Flex>
-            <Styled.Title>HackDuke</Styled.Title>
+            <Styled.Title>MoreMusic</Styled.Title>
             <div style={{display:"flex"}}>
               <Styled.Button>Lend Instruments</Styled.Button>
               <Styled.Button style={{backgroundColor:"#c4c4c4", marginLeft:"25px"}}>Sign In</Styled.Button>
