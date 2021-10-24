@@ -25,7 +25,7 @@ function MyApp({ Component, pageProps }) {
       <Component {...pageProps} />
       <style jsx global>{`
         body {
-          background: #41434a;
+          background: white;
           font-family: "Poppins";
         }
       `}</style>

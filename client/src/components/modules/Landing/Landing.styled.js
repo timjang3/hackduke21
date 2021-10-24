@@ -6,23 +6,26 @@ import { CgSearch } from "react-icons/cg"
 
 export const Background = styled.div`
   position: relative;
-  height: 190px;
-  width: 100%;
-  user-select: none;
-  -moz-user-select: none;
-  -webkit-user-drag: none;
-  -webkit-user-select: none;
-  -ms-user-select: none;
+  height: 300px;
+  width: 650px;
 `
 
 export const Title = styled.div`
-  font-size: 80px;
-  color:black;
-  font-weight:700;
+  font-size: 55px;
+  font-weight:600;
+  color:#383838;
+  line-height: 1.14;
+`
+
+export const Description = styled.div`
+  padding-top:10px;
+  font-size: 25px;
+  line-height: 1.5;
+  font-weight:500;
+  color:#383838;
 `
 
 export const Flex = styled.div`
-  margin-top:15px;
   display:flex;
   justify-content:space-between;
   width:1200px;
@@ -33,16 +36,20 @@ export const Flex = styled.div`
   }
 `
 export const Button = styled.div`
-  background-color:#BFDE8D;
-  margin:auto;
-  font-size:28px;
-  font-weight:500;
-  border-radius:7px;
-  padding-top:6px;
-  padding-bottom:7px;
-  padding-left: 15px;
-  padding-right: 15px;
+  padding:15px;
+  font-size:20px;
 `
-
+export const Image = styled.div`
+  padding-left: 100px;
+  overflow:hidden;
+`
+export const Link = styled.a`
+  padding-top:10px;
+  font-size: 25px;
+  line-height: 1.6;
+  font-weight:500;
+  color:gray;
+  text-decoration: underline;
+`
 
 
