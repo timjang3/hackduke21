@@ -1,8 +1,9 @@
 from flask import Flask
 from flask_sqlalchemy import SQLAlchemy
 from os import path
-from flask_login import LoginManager, UserMixin
-from .models import User
+from flask_login import LoginManager
+import urllib
+import os
 
 db = SQLAlchemy()
 DB_NAME = "database.db"
@@ -11,8 +12,13 @@ DB_NAME = "database.db"
 
 def create_app():
     app = Flask(__name__)
-    app.config['SECRET_KEY'] = 'julioindapocket'
-    app.config['SQLALCHEMY_DATABASE_URI'] = f'sqlite:///{DB_NAME}'
+    conn_string = "cockroachdb://joao:vaitomarnocuquemtalendo@free-tier.gcp-us-central1.cockroachlabs.cloud:26257/defaultdb?sslmode=verify-full&sslrootcert=$HOME/.postgresql/root.crt&options=--cluster%3Dhack-duke-4316"
+    db_uri = os.path.expandvars(conn_string)
+    db_uri = urllib.parse.unquote(db_uri)
+    psycopg_uri = db_uri.replace(
+        'postgresql://', 'cockroachdb://').replace(
+            'postgres://', 'cockroachdb://')
+    app.config['SQLALCHEMY_DATABASE_URI'] = psycopg_uri
     db.init_app(app)
 
     # from .views import views

@@ -16,7 +16,8 @@ def signup():
     if accounttype == 'lender' or accounttype == 'borrower':
         new_user = User(name=name, password=generate_password_hash(password, method='sha256'), accounttype=accounttype)
         db.session.add(new_user)
-        db.session.commit
+        db.session.commit()
+
 
 @auth.route('/login', methods=['GET', 'POST'])
 def login():
