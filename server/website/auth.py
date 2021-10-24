@@ -11,12 +11,14 @@ def signup():
     if request.method == 'POST':
         name = request.form.get('name')
         password = request.form.get('password')
-        accounttype = request.form.get('accounttype')
+        accountType = request.form.get('accounttype')
 
-    if accounttype == 'lender' or accounttype == 'borrower':
-        new_user = User(name=name, password=generate_password_hash(password, method='sha256'), accounttype=accounttype)
-        db.session.add(new_user)
-        db.session.commit()
+        if accountType == 'lender' or accountType == 'borrower':
+            new_user = User(name=name, password=generate_password_hash(password, method='sha256'), accounttype=accountType)
+            db.session.add(new_user)
+            db.session.commit()
+
+    return render_template('/client/src/pages/signup.js')
 
 
 @auth.route('/login', methods=['GET', 'POST'])
@@ -30,7 +32,6 @@ def login():
          if check_password_hash(user.password, password): #checks user.password and password to see if they are the same
                 login_user(user, remember=True)
                 flash('Logged in successfully!', category='success')
-                return redirect(url_for('views.home'))
 
 
 @auth.route('/logout', methods=['GET','POST'])
@@ -38,6 +39,3 @@ def login():
 def logout():
     if request.method == 'POST':
         logout_user()
-        return redirect(url_for('views.home'))
-
-    return render_template("auth/logout.html")
