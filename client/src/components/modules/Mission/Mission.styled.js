@@ -33,6 +33,8 @@ export const Description = styled.div`
 
 export const SubDescription = styled.div`
   padding-top:10px;
+  padding-right: 20px;
+  padding-left: 20px;
   font-size: 20px;
   line-height: 1.5;
   font-weight: 300;
